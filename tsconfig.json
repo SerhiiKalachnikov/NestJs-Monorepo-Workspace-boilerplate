@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/user-profile": [
+        "apps/user-profile/src/app/user-profile/src"
+      ],
+      "@app/user-profile/*": [
+        "apps/user-profile/src/app/user-profile/src/*"
+      ],
+      "@app/auth": [
+        "libs/auth/src"
+      ],
+      "@app/auth/*": [
+        "libs/auth/src/*"
+      ],
+      "@use/app-use-plugins": [
+        "libs/app-use-plugins/src"
+      ],
+      "@use/app-use-plugins/*": [
+        "libs/app-use-plugins/src/*"
+      ],
+      "@lib/database": [
+        "libs/database/src"
+      ],
+      "@lib/database/*": [
+        "libs/database/src/*"
+      ],
+      "@lib/redis": [
+        "libs/redis/src"
+      ],
+      "@lib/redis/*": [
+        "libs/redis/src/*"
+      ],
+      "@lib/auth-lib": [
+        "libs/auth-lib/src"
+      ],
+      "@lib/auth-lib/*": [
+        "libs/auth-lib/src/*"
+      ]
+    }
+  },
+}
