@@ -1,0 +1,47 @@
+services:
+  auth:
+    container_name: auth
+    build:
+      context: .
+      dockerfile: ./apps/auth/Dockerfile
+    ports:
+      - 8008:8008
+    env_file:
+      - .env.docker
+    depends_on:
+      - redis
+      - mongodb
+
+  user-profile:
+    container_name: user-profile
+    build:
+      context: .
+      dockerfile: ./apps/user-profile/Dockerfile
+    env_file:
+      - .env.docker
+    ports:
+      - 8009:8009
+    depends_on:
+      - redis
+      - mongodb
+
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - 6379:6379
+
+  mongodb:
+    container_name: mongodb-mobile-app
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      - MONGO_INITDB_DATABASE=mobile-app
+    volumes:
+      - dbdata6:/data/db
+
+volumes:
+  dbdata6:
