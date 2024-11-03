@@ -1,9 +1,8 @@
+version: '3.8'
 services:
   auth:
     container_name: auth
-    build:
-      context: .
-      dockerfile: ./apps/auth/Dockerfile
+    image: id.dkr.ecr.us-east-2.amazonaws.com/{folderName}/auth:latest
     ports:
       - 8008:8008
     env_file:
@@ -11,19 +10,19 @@ services:
     depends_on:
       - redis
       - mongodb
+    pull_policy: always
 
   user-profile:
     container_name: user-profile
-    build:
-      context: .
-      dockerfile: ./apps/user-profile/Dockerfile
-    env_file:
-      - .env.docker
+    image: id.dkr.ecr.us-east-2.amazonaws.com/{folderName}/user-profile:latest
     ports:
       - 8009:8009
+    env_file:
+      - .env.docker
     depends_on:
       - redis
       - mongodb
+    pull_policy: always
 
   redis:
     container_name: redis
@@ -32,7 +31,7 @@ services:
       - 6379:6379
 
   mongodb:
-    container_name: mongodb-mobile-app
+    container_name: mongodb
     image: mongo
     ports:
       - 27017:27017
@@ -41,7 +40,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=pass
       - MONGO_INITDB_DATABASE=mobile-app
     volumes:
-      - dbdata6:/data/db
+      - dbdata:/data/db
 
 volumes:
-  dbdata6:
+  dbdata:

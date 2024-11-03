@@ -7,9 +7,6 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build --webpack",
-    "build:libs": "nest build auth-lib && nest build redis",
-    "start:auth": "npm run build:libs && nest start auth --watch",
-    "build:user-profile": "nest build user-profile",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "test": "jest",
@@ -17,8 +14,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "start:dev": "concurrently \"npm:dev-*\"",
-    "dev-user-profile": "cross-env PORT=8001 nest start --watch user-profile",
-    "dev-user-auth": "cross-env PORT=8003 nest start --watch auth",
+    "dev-user-profile": "nest start --watch user-profile",
+    "dev-user-auth": "nest start --watch auth",
     "prod-user-profile": "nest start user-profile",
     "prod-user-auth": "nest start auth"
   },
