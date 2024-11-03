@@ -43,11 +43,11 @@ The applications expose various HTTP endpoints for different functionalities, su
   - [👤 User Profile](#-user-profile)
 - [📚 Libraries](#-libraries)
   - [🔌 App Use Plugins](#-app-use-plugins)
-  - [🛡️ Auth Lib](#-auth-lib)
-  - [🗄️ Database](#-database)
+  - [🏰 Auth Lib](#-auth-lib)
+  - [📁 Database](#-database)
   - [🧰 Redis](#-redis)
-- [🛠️ Getting Started](#-getting-started)
-  - [⚙️ Prerequisites](#-prerequisites)
+- [🔨 Getting Started](#-getting-started)
+  - [🔩 Prerequisites](#-prerequisites)
   - [🔧 Installation](#-installation)
 - [🏃 Running the Applications](#-running-the-applications)
   - [💻 Development](#-development)
@@ -58,7 +58,7 @@ The applications expose various HTTP endpoints for different functionalities, su
 - [🌍 Environment Variables](#-environment-variables)
 - [🚢 Deployment](#-deployment)
   - [🚀 Deploying to AWS EC2 through ECR](#-deploying-to-aws-ec2-through-ecr)
-- [📜 License](#-license)
+- [📑 License](#-license)
 
 ## 📂 Project Structure
 
@@ -254,7 +254,7 @@ The `app-use-plugins` library provides common plugins and middleware used across
 - 📄 Swagger Documentation
 - 🛡️ Global Middlewares
 
-### 🛡️ Auth Lib
+### 🏰 Auth Lib
 
 The `auth-lib` library contains authentication-related services, guards, and strategies. It includes:
 
@@ -262,7 +262,7 @@ The `auth-lib` library contains authentication-related services, guards, and str
 - 🔐 Roles Guard
 - 👤 User Decorator
 
-### 🗄️ Database
+### 📁 Database
 
 The `database` library provides database-related services and schemas. It includes:
 
@@ -276,9 +276,9 @@ The `redis` library provides Redis-related services. It includes:
 - 🔧 Redis Client
 - 🔄 Token Management
 
-## 🛠️ Getting Started
+## 🔨 Getting Started
 
-### ⚙️ Prerequisites
+### 🔩 Prerequisites
 
 - 🟢 Node.js
 - 📦 npm
@@ -446,6 +446,6 @@ Create an ECR Repository:
   - Configure Nginx to serve the applications.
   - Use Certbot to generate SSL certificates for the domain.
 
-📜 License
+## 📑 License
 
 This project is licensed under the MIT License.
